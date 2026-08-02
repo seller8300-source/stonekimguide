@@ -1,0 +1,559 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026 코리아빌드 가이드라인_ 스톤킴</title>
+
+<style>
+:root{
+  --sans:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI",
+    "Malgun Gothic","맑은 고딕",Roboto,"Helvetica Neue",sans-serif;
+  --ink:#1E1A17;
+  --body:#57504A;
+  --mute:#948C85;
+  --line:#EBE7E4;
+  --line2:#F5F2F0;
+  --orange:#E8641A;
+  --orange-dk:#C24F0E;
+  --orange-lt:#FDF4EE;
+  --red:#B32718;
+  --red-bg:#FDF4F2;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:#fff;color:var(--ink);font-family:var(--sans);
+  font-size:16px;line-height:1.78;letter-spacing:-.02em;
+  -webkit-font-smoothing:antialiased;word-break:keep-all;padding-bottom:60px;
+}
+.wrap{max-width:700px;margin:0 auto;padding:0 20px}
+strong{font-weight:600;color:var(--ink)}
+a{color:inherit}
+
+/* TOP */
+.top{background:var(--orange);color:#fff;position:sticky;top:0;z-index:50}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;height:50px;
+  font-size:13.5px;font-weight:600;letter-spacing:-.03em}
+.top .r{font-size:11.5px;opacity:.75;font-weight:500}
+
+/* HERO */
+.hero{padding:48px 0 44px}
+.kicker{font-size:11.5px;font-weight:700;letter-spacing:.16em;color:var(--orange);margin-bottom:16px}
+h1{font-size:clamp(26px,7vw,31px);font-weight:700;line-height:1.4;letter-spacing:-.04em}
+h1 span{color:var(--orange)}
+.lede{margin-top:20px;font-size:15px;color:var(--body);line-height:1.9}
+.lede+.lede{margin-top:12px}
+
+/* SECTION */
+section{padding-bottom:34px}
+.hd{display:flex;gap:14px;align-items:flex-start;padding:28px 0 18px;border-top:1px solid var(--line)}
+.hd .n{font-size:26px;font-weight:700;color:#E5DCD5;line-height:1;letter-spacing:-.04em;flex:none;width:38px;padding-top:2px}
+h2{font-size:20.5px;font-weight:700;letter-spacing:-.035em;line-height:1.42}
+.sub{font-size:13.5px;color:var(--mute);margin-top:7px;line-height:1.7}
+.body{padding-left:52px}
+section.warn-sec h2{color:var(--red)}
+section.warn-sec .hd .n{color:#EAC9C3}
+
+/* 브랜드 */
+.panel{border-left:2px solid var(--orange);padding:2px 0 2px 16px;margin-bottom:18px}
+.lbl{font-size:10.5px;font-weight:700;letter-spacing:.13em;color:#A99F97}
+.nm{font-size:19px;font-weight:700;letter-spacing:-.035em;margin-top:2px}
+.nm small{font-size:11.5px;font-weight:600;color:var(--mute);margin-left:6px;letter-spacing:.06em}
+.ds{font-size:14.6px;color:var(--body);margin-top:5px;line-height:1.8}
+.quote{font-size:15.3px;line-height:1.82;color:var(--ink);font-weight:500;
+  background:var(--orange-lt);padding:16px 18px;border-radius:10px;margin-bottom:18px}
+
+/* 라인업 */
+.lineup{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:16px}
+.lgrp{padding:16px 18px;border-top:1px solid var(--line)}
+.lgrp:first-child{border-top:none}
+.lgrp .cat{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--orange);margin-bottom:8px}
+.lgrp .items{display:flex;flex-wrap:wrap;gap:6px}
+.pill{font-size:13px;font-weight:600;padding:5px 11px;border-radius:99px;
+  background:#F6F3F1;color:var(--body)}
+.pill.on{background:var(--orange);color:#fff}
+.lgrp .memo{font-size:13.5px;color:var(--mute);margin-top:9px;line-height:1.7}
+
+/* 일반 박스 */
+.note{border:1px solid var(--line);border-radius:12px;padding:17px 18px;margin-top:4px}
+.note.warm{background:var(--orange-lt);border-color:#F2DFD1}
+.note h3{font-size:15.3px;font-weight:700;letter-spacing:-.028em;margin-bottom:8px}
+.note p{font-size:14.5px;color:var(--body);line-height:1.8}
+.note p+p{margin-top:10px}
+.hl{background:linear-gradient(transparent 62%,rgba(232,100,26,.22) 62%);font-weight:600;color:var(--ink)}
+
+/* Q&A */
+.qa{list-style:none}
+.qa li{padding:16px 17px;border-radius:11px;margin-bottom:7px;border:1px solid transparent}
+.qa li:nth-child(even){background:#FBF6F2;border-color:#F2E7DF}
+.qa li:last-child{margin-bottom:0}
+.qa .badge{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.02em;
+  padding:3px 8px;border-radius:5px;margin-bottom:7px;background:#F0E9E4;color:#8A7D73}
+.qa .badge.soft{background:#FDEDE1;color:var(--orange-dk)}
+.qa .badge.cok{background:#E9EFF4;color:#3D6382}
+.qa .q{font-size:15.8px;font-weight:700;letter-spacing:-.03em;line-height:1.5}
+.qa .q b{color:var(--orange-dk);margin-right:8px;font-size:13px;font-weight:700}
+.qa .a{font-size:14.6px;color:var(--body);margin-top:7px;line-height:1.85}
+.qa .a em{font-style:normal;color:var(--orange-dk);font-weight:600}
+.qa .a u{text-decoration:none;color:var(--red);font-weight:700}
+.point{margin-top:12px;background:#fff;border:1px solid var(--orange);border-radius:10px;padding:14px 16px;
+  font-size:14.4px;color:var(--ink);line-height:1.8}
+.point b{display:block;font-size:10.5px;letter-spacing:.13em;color:var(--orange-dk);margin-bottom:6px;font-weight:700}
+
+/* 주의사항 */
+.wl{list-style:none;counter-reset:w}
+.wl li{counter-increment:w;padding:14px 0 14px 30px;position:relative;
+  border-top:1px solid var(--line2);font-size:14.6px;color:var(--body);line-height:1.78}
+.wl li:first-child{border-top:none;padding-top:0}
+.wl li::before{content:counter(w);position:absolute;left:0;top:15px;font-size:11px;font-weight:700;
+  color:#fff;background:var(--red);width:19px;height:19px;border-radius:5px;
+  display:grid;place-items:center;line-height:1}
+.wl li:first-child::before{top:1px}
+.wl .qq{display:block;color:var(--red);font-weight:600;font-size:15px;margin-bottom:3px}
+.stamp{margin-top:18px;border:1px solid var(--red);background:var(--red-bg);border-radius:11px;
+  padding:15px 17px;font-size:14.8px;color:var(--red);font-weight:600;line-height:1.75}
+.stamp b{display:block;font-size:10.5px;letter-spacing:.14em;opacity:.7;margin-bottom:6px;font-weight:600}
+
+/* 스텝 */
+.step{display:flex;gap:14px;padding:16px 0;border-top:1px solid var(--line2)}
+.step:first-child{padding-top:0;border-top:none}
+.step .n2{font-size:12px;font-weight:700;color:#fff;background:var(--orange);width:22px;height:22px;
+  border-radius:6px;display:grid;place-items:center;flex:none;margin-top:4px}
+.step h4{font-size:15.3px;font-weight:700;letter-spacing:-.028em}
+.step p{font-size:14.4px;color:var(--body);margin-top:4px;line-height:1.8}
+.line{margin-top:12px;padding:14px 16px;background:var(--orange-lt);border-radius:10px;
+  font-size:14.6px;color:var(--ink);line-height:1.8}
+.line b{display:block;font-size:10.5px;letter-spacing:.13em;color:var(--orange-dk);margin-bottom:6px;font-weight:700}
+
+/* FAQ */
+.search{width:100%;padding:13px 15px;font-size:15px;font-family:var(--sans);border:1px solid var(--line);
+  border-radius:11px;background:#fff;color:var(--ink);margin-bottom:12px}
+.search::placeholder{color:#BCB3AC}
+.search:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(232,100,26,.12)}
+.grp{border:1px solid var(--line);border-radius:11px;margin-bottom:8px;overflow:hidden}
+.grp>summary{cursor:pointer;list-style:none;padding:13px 36px 13px 15px;font-size:14.8px;
+  font-weight:600;position:relative;letter-spacing:-.028em;background:#FCFAF9}
+.grp[open]>summary{background:#fff;border-bottom:1px solid var(--line)}
+.grp>summary .cnt{font-size:12px;color:var(--mute);font-weight:500;margin-left:6px}
+.glist{padding:2px 15px 8px}
+.qitem{border-top:1px solid var(--line2)}
+.qitem:first-child{border-top:none}
+.qitem>summary{cursor:pointer;list-style:none;padding:12px 28px 12px 0;font-size:14.4px;
+  font-weight:600;position:relative;letter-spacing:-.026em;line-height:1.6}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";position:absolute;width:7px;height:7px;border-right:1.8px solid #C0B7B0;
+  border-bottom:1.8px solid #C0B7B0;transform:rotate(45deg);transition:transform .2s}
+.grp>summary::after{right:16px;top:19px}
+.grp[open]>summary::after{transform:rotate(-135deg);top:22px}
+.qitem>summary::after{right:5px;top:18px}
+.qitem[open]>summary::after{transform:rotate(-135deg);top:21px}
+summary:focus-visible{outline:2px solid var(--orange);outline-offset:-2px}
+.ans{padding:0 2px 13px 0;font-size:14.2px;color:var(--body);line-height:1.82}
+.empty{padding:20px 4px;color:var(--mute);font-size:14px;text-align:center}
+
+/* 링크 */
+.lk{display:flex;gap:15px;align-items:center;border:1px solid var(--line);border-radius:12px;
+  padding:16px 17px;text-decoration:none;color:inherit;margin-bottom:10px;transition:border-color .15s,background .15s}
+.lk:last-child{margin-bottom:0}
+.lk:hover,.lk:focus-visible{border-color:var(--orange);background:var(--orange-lt);outline:none}
+.qr{width:68px;height:68px;flex:none;border:1px solid var(--line2);border-radius:9px;
+  display:grid;place-items:center;overflow:hidden;background:#fff}
+.qr img{width:100%;height:100%;display:block}
+.qr .fb{font-size:9.5px;color:#C6BDB6;text-align:center;line-height:1.5}
+.lk .kind{font-size:10.5px;font-weight:700;letter-spacing:.13em;color:var(--orange-dk);margin-bottom:4px}
+.lk .ttl{font-size:15.3px;font-weight:700;letter-spacing:-.028em}
+.lk .ds2{font-size:13.5px;color:var(--body);margin-top:5px;line-height:1.7}
+
+footer{margin-top:10px;padding:26px 0 0;border-top:1px solid var(--line);
+  font-size:12.5px;color:var(--mute);text-align:center;line-height:1.9}
+
+@media (max-width:520px){
+  .body{padding-left:0}
+  .hd{gap:11px}
+  .hd .n{width:30px;font-size:22px}
+}
+</style>
+
+<div class="top"><div class="wrap"><div>스톤킴 STONEKIM</div><div class="r">현장 근무 가이드</div></div></div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">2026 KOREA BUILD</div>
+    <h1>2026 코리아빌드<br>가이드라인<span>_ 스톤킴</span></h1>
+    <p class="lede">판매 목적보다는 <strong>제품에 대한 소개와<br>협력업체 · 대리점 · 이벤트 참여 안내</strong>의 역할이 가장 큽니다 😊</p>
+    <p class="lede">다양한 라인업이 있지만 <strong>소프트스톤과 콕스톤 두 가지만</strong> 집중적으로 아시면 됩니다.<br>나머지 자재는 모두 저희 자재라고 안내해 주시고, 자세한 문의를 하시는 분은<br><strong>"담당자 연결해 드릴게요"</strong>로 넘겨주시면 됩니다.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- 01 -->
+  <section>
+    <div class="hd"><div class="n">01</div><div><h2>스톤킴은 어떤 브랜드인가요</h2></div></div>
+    <div class="body">
+      <div class="panel">
+        <div class="lbl">브랜드</div>
+        <div class="nm">스톤킴 <small>STONEKIM</small></div>
+        <div class="ds"><strong>트렌디한 인테리어 자재들을 취급하는 브랜드</strong>로,<br>신소재 자재들을 유통하고 있습니다.</div>
+      </div>
+
+      <div class="quote">브랜드 한 문장 —<br>"우리는 <strong>초효율 시공</strong>을 만듭니다."</div>
+
+      <div class="lgrp" style="border:none;padding:0 0 10px"><div class="cat" style="color:var(--mute)">연출존에 들어간 제품</div></div>
+
+      <div class="lineup">
+        <div class="lgrp">
+          <div class="cat">내용 숙지</div>
+          <div class="items">
+            <span class="pill on">소프트스톤</span>
+            <span class="pill on">콕스톤</span>
+          </div>
+          <div class="memo">이 두 가지만 <strong>제대로 아시면 됩니다.</strong></div>
+        </div>
+        <div class="lgrp">
+          <div class="cat" style="color:var(--mute)">참고만</div>
+          <div class="items">
+            <span class="pill">아이스패널</span>
+            <span class="pill">미르패널</span>
+            <span class="pill">스탠리패널</span>
+            <span class="pill">유리블럭</span>
+          </div>
+          <div class="memo">이름 정도만 알아두시면 됩니다. 문의가 오면 담당자 연결.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 소프트스톤 -->
+  <section>
+    <div class="hd"><div class="n">02</div><div><h2>소프트스톤</h2>
+      <p class="sub">연출존의 메인 제품입니다. 질문이 가장 많이 나옵니다.</p></div></div>
+    <div class="body">
+      <div class="panel">
+        <div class="lbl">한 줄 설명</div>
+        <div class="nm">휘어지는 석재 마감재</div>
+        <div class="ds"><strong>천연 석분(돌가루)을 고온·고압으로 성형해 만든 마감재</strong>입니다.<br>유리섬유 베이스 위에 석분을 붙여 만들어서, 진짜 돌 질감은 그대로인데 가볍고 휘어집니다.<br><strong>대리석, 스톤, 트래버틴, 노출콘크리트 등</strong> 다양한 패턴이 있습니다.</div>
+      </div>
+
+      <div class="note warm">
+        <h3>손님을 붙잡는 한마디</h3>
+        <p>"이거 진짜 돌인데 <span class="hl">이렇게 휘어져요.</span> 한번 들어보세요, 정말 가볍습니다."</p>
+        <p>말로 설명하는 것보다 <strong>직접 만져보고 휘어보게 하는 게 100배 빠릅니다.</strong></p>
+      </div>
+
+      <ul class="qa" style="margin-top:16px">
+        <li>
+          <div class="q"><b>Q1</b>이게 진짜 돌이에요?</div>
+          <div class="a"><strong>네, 천연 석분(돌가루)으로 만듭니다.</strong><br>유리섬유 베이스 위에 돌가루를 고온·고압으로 눌러 성형한 자재라 실제 돌 질감이 납니다.</div>
+        </li>
+        <li>
+          <div class="q"><b>Q2</b>일반 타일이나 석재랑 뭐가 달라요?</div>
+          <div class="a"><strong>가볍고 휘어집니다.</strong> 이게 전부입니다.<br>600×1200은 약 3~5kg, 1200×2400 대형도 약 15kg 정도입니다.<br><strong>타일이나 빅슬랩에 비해 3~4배는 가볍고,</strong> 기둥이나 원형 시공도 가능합니다.</div>
+        </li>
+        <li>
+          <div class="q"><b>Q3</b>기둥이나 곡면에도 붙나요?</div>
+          <div class="a"><strong>가능합니다. 소프트스톤의 가장 큰 장점입니다.</strong><br>기둥·아치·코너처럼 일반 석재로는 어려운 곡면도 빠르게 시공됩니다.<br><em>— 모델마다 휠 수 있는 정도가 달라서, 정확한 건 담당자가 확인해 드립니다.</em></div>
+        </li>
+        <li>
+          <div class="q"><b>Q4</b>어떻게 자르고 붙여요?</div>
+          <div class="a">커터칼, 그라인더, 플런지쏘, 톱다이로 재단합니다. <strong>커팅 난이도는 어렵지 않습니다.</strong><br>접착은 <u>경화가 빠른 실리콘</u>을 기본으로 쓰고, 뒷면 <strong>90% 이상 전면 도포</strong>가 핵심입니다.</div>
+        </li>
+        <li>
+          <div class="q"><b>Q5</b>불에 강한가요? 방염 되나요?</div>
+          <div class="a"><strong>준불연 인증을 받은 자재입니다.</strong> 준불연 성적서를 드리고 있습니다.<br>병의원, 가라오케 같은 곳에도 시공하고 있습니다.<br>혹시 관할 소방기관에서 준불연 인증서로 안 된다고 하면 <strong>방염필증 발급도 가능합니다.</strong></div>
+          <div class="point"><b>여기까지만 말하세요</b>"저희 준불연 인증 받았고, 필요하시면 방염필증도 발급됩니다.<br>현장 조건은 담당자가 정확히 확인해 드릴게요."<br><br>→ <strong>"무조건 통과됩니다"는 절대 금지</strong>입니다.</div>
+        </li>
+        <li>
+          <div class="q"><b>Q6</b>바닥에도 쓸 수 있나요?</div>
+          <div class="a"><strong>바닥은 안 됩니다.</strong><br>벽체·마감용으로 만든 자재라 사람이 밟거나 가구 하중이 계속 실리면 변형될 수 있습니다.<br>벽면 전용이라고 안내해 주세요.</div>
+        </li>
+        <li>
+          <div class="q"><b>Q7</b>화장실이나 주방처럼 물 닿는 곳은요?</div>
+          <div class="a"><strong>기본적인 생활 방수는 됩니다.</strong> 호텔·백화점 건식 화장실에 이미 많이 쓰입니다.<br>다만 <strong>습기가 생기고, 독한 세제로 청소하는 습식 화장실은 권장하지 않습니다.</strong> 꼭 쓰시려면 별도 코팅이 필요해서 담당자 상담이 필요합니다.</div>
+        </li>
+        <li>
+          <div class="q"><b>Q8</b>외벽에도 쓸 수 있나요?</div>
+          <div class="a">해외에서는 이미 시공하고 있고, 외벽 시공 시 10년 수명을 안내합니다.<br><strong>현재 외벽 리모델링에도 활용하고 있으나,</strong> 국내는 기후 변수와 법적 기준이 있어<br><strong>담당자 상담 후 진행하고 있습니다.</strong><br><em>— 된다·안 된다를 단정하지 마시고 담당자에게 넘기세요.</em></div>
+        </li>
+        <li>
+          <div class="q"><b>Q9</b>제가 직접 붙일 수 있나요?</div>
+          <div class="a">600×1200 기준 3~5kg이라 <strong>기본 공구만 다룰 수 있으면 셀프 시공도 가능합니다.</strong><br>부자재까지 들어있는 셀프 시공 패키지도 있습니다.<br>다만 마감 완성도를 높이시려면 전문 시공을 권해 드립니다.</div>
+        </li>
+        <li>
+          <div class="q"><b>Q10</b>다른 데서도 파는데 여기가 뭐가 달라요?</div>
+          <div class="a">소프트스톤을 취급하는 곳은 있어도 <strong>품질까지 같지는 않습니다.</strong><br>스톤킴은 해외 공장과 유통사를 직접 검토해 기술력과 품질 관리가 되는 공장 제품만 들여옵니다.<br>또 <strong>KCL 시험을 통해 중금속·천연방사능·실내공기질(VOC·포름알데히드)·항균성·내오염성·촉진내후성까지 검증</strong>했습니다.</div>
+        </li>
+        <li>
+          <div class="q"><b>Q11</b>시공도 해주시나요?</div>
+          <div class="a">시공의 경우 <strong>협력업체를 연계해 드려서</strong> 자재부터 시공까지 <strong>한 번에 해결하실 수 있게 도와드리고 있습니다.</strong></div>
+        </li>
+        <li>
+          <div class="q"><b>Q12</b>샘플을 받아볼 수 있나요?</div>
+          <div class="a">샘플은 <strong>200×300 사이즈로 개당 3,000원</strong>에 판매하고 있습니다.<br>다만 <strong>오더 주문 시에는 샘플비를 빼드리고 있습니다.</strong></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 03 콕스톤 -->
+  <section>
+    <div class="hd"><div class="n">03</div><div><h2>콕스톤</h2>
+      <p class="sub">소프트스톤 옆에 같이 있어서 비교 질문이 나옵니다.</p></div></div>
+    <div class="body">
+      <div class="panel">
+        <div class="lbl">한 줄 설명</div>
+        <div class="nm">볼륨감 있는 PU 석재</div>
+        <div class="ds"><strong>PU 소재</strong>로, <strong>볼륨감 있는 석재 연출</strong>이 가능한 제품입니다.<br>가볍고 시공성이 좋아 <strong>암석 미장의 효과</strong>를 낼 수 있습니다.</div>
+      </div>
+
+      <ul class="qa" style="margin-top:16px">
+        <li>
+          <div class="q"><b>Q1</b>콕스톤은 뭐예요?</div>
+          <div class="a"><strong>PU 소재로 만든 석재 마감재</strong>입니다.<br>가볍고 시공이 쉬우면서 <strong>암석 미장 같은 느낌</strong>을 낼 수 있습니다.</div>
+        </li>
+        <li>
+          <div class="q"><b>Q2</b>소프트스톤이랑 뭐가 달라요?</div>
+          <div class="a"><strong>소재와 입체감이 다릅니다.</strong><br>소프트스톤은 천연 석분으로 만든 얇고 휘어지는 판재라 <strong>매끈한 석재 질감</strong>이고,<br>콕스톤은 PU 소재라 <strong>볼륨감 있는 입체적인 암석 느낌</strong>이 납니다.</div>
+          <div class="point"><b>이렇게 안내하세요</b>"매끈한 대리석 느낌 원하시면 소프트스톤,<br><strong>울퉁불퉁한 암석 질감</strong> 원하시면 콕스톤이에요.<br>둘 다 가볍고 시공은 쉽습니다."</div>
+        </li>
+        <li>
+          <div class="q"><b>Q3</b>어떻게 자르고 붙여요?</div>
+          <div class="a">소프트스톤과 동일합니다.<br>커터칼, 그라인더, 플런지쏘, 톱다이로 재단하고, 경화가 빠른 실리콘으로 접착합니다.</div>
+        </li>
+        <li>
+          <div class="q"><b>Q4</b>인증이나 시험성적서가 있나요?</div>
+          <div class="a"><strong>아직 국내 인증으로는 없습니다.</strong><br>그래서 <strong>리모델링 쪽으로 많이 찾아주십니다.</strong></div>
+        </li>
+        <li>
+          <div class="q"><b>Q5</b>샘플을 받아볼 수 있나요?</div>
+          <div class="a">개당 제품을 절단해서 드리지는 않습니다.<br><strong>컬러와 질감 정도를 확인할 수 있는 샘플박스로 구매 가능</strong>하며, 단가는 <strong>3만 원</strong>입니다.</div>
+        </li>
+        <li>
+          <div class="q"><b>Q6</b>그 외 질문이 나오면</div>
+          <div class="a">가격, 방염, 외부 사용, 시공 가능 여부 등은 <strong>담당자에게 넘겨 주세요.</strong><br>소프트스톤 답변을 콕스톤에 그대로 적용하시면 안 됩니다. 소재가 다릅니다.</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 04 -->
+  <section>
+    <div class="hd"><div class="n">04</div><div><h2>더 물어보면 여기서 찾기</h2>
+      <p class="sub">외울 필요 없습니다. 검색하거나 항목을 눌러서 찾으세요.<br>손님 앞에서 보면서 읽어 주셔도 괜찮습니다.</p></div></div>
+    <div class="body">
+      <input class="search" id="q" type="search" placeholder="검색 (예: 천정, 줄눈, 샘플, 쇼룸)" autocomplete="off">
+      <div id="faq"></div>
+      <div class="empty" id="none" hidden>찾는 내용이 없습니다. 담당자에게 넘겨 주세요.</div>
+    </div>
+  </section>
+
+  <!-- 05 -->
+  <section class="warn-sec">
+    <div class="hd"><div class="n">05</div><div><h2>주의 사항</h2>
+      <p class="sub">아래는 무조건 담당자에게 넘기세요.</p></div></div>
+    <div class="body">
+      <ul class="wl">
+        <li><span class="qq">"이거 우리 현장 소방 통과돼요?"</span>준불연 인증이 되어 있어 <strong>준불연 인증서를 공유해 드리고 있습니다.</strong><br>다만 <strong>시공 전 해당 관할 지역에 꼭 확인하셔야 한다고</strong> 안내해 주세요. 통과 여부를 단정하면 안 됩니다.</li>
+        <li><span class="qq">"외벽에 써도 돼요?"</span><strong>외벽에 사용하고 있긴 하지만, 상담 후 진행을 권해드리고 있습니다</strong>까지만 말씀해 주세요.</li>
+        <li><span class="qq">"평당 얼마예요?"</span>단가를 바로 말하지 마시고, <strong>현장을 보고 산출하는 방법을 안내</strong>해 드린 뒤 담당자로 넘겨주세요.</li>
+        <li><span class="qq">"이 수량 지금 바로 받을 수 있어요?"</span><strong>국내 재고가 있으면 바로 받으실 수 있고, 메인 제품은 보통 상시 재고가 있는 편</strong>입니다.<br>정확한 재고 확인은 담당자가 해드립니다.</li>
+        <li><span class="qq">"대리점 하고 싶은데요"<br>"우리 공간에 이거 붙일 수 있어요?"</span><strong>담당자를 따로 연결해 드립니다.</strong></li>
+        <li><span class="qq">"포미스톤도 봤는데 뭐가 달라요?"</span><strong>비슷한 소프트스톤 제품이지만 브랜드와 모델이 다르고, 제품 자체도 다릅니다</strong>까지만 안내해 주세요.</li>
+      </ul>
+      <div class="stamp">
+        <b>잘 모르는 내용이 나오면</b>
+        "제가 안내 담당자라서 <strong>해당 부분 체크하고 도와드릴게요!</strong>"<br>
+        또는 "담당자분 연결해 드릴게요."</div>
+    </div>
+  </section>
+
+  <!-- 06 -->
+  <section>
+    <div class="hd"><div class="n">06</div><div><h2>이렇게 고객응대 해주세요 🖐️</h2></div></div>
+    <div class="body">
+      <div class="step">
+        <div class="n2">1</div>
+        <div>
+          <h4>제품에 대한 정확한 안내를 해주세요</h4>
+          <p>모르시는 부분은 <strong>꼭 직원에게 체크 후 답변</strong>해 주시면 되겠습니다.</p>
+          <p>고객에게 <strong>실제로 돌 질감이 나는 부분들을 느껴보게끔, 만져보게끔</strong> 해주세요.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n2">2</div>
+        <div>
+          <h4>가격을 물어보시면 업체인지 개인인지 먼저 확인</h4>
+          <p><strong>업체가와 소비자가가 다릅니다.</strong><br>업체이시면 <strong>명함을 확인한 뒤</strong> 업체가로 안내하고,<br>개인 소비자이시면 <strong>업체가에서 20% 올려서</strong> 전달해 주세요.</p>
+          <div class="line"><b>이렇게 물어보세요</b>"혹시 인테리어 쪽 일 하고 계세요?<br>아니면 직접 쓰실 공간이 있으신 거예요?"</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n2">3</div>
+        <div>
+          <h4>샘플을 원하시면 사이트 안내</h4>
+          <p><strong>사이트에서 직접 신청하실 수 있다고</strong> 안내해 주세요.<br>07번 QR을 보여드리면 바로 신청하실 수 있습니다.</p>
+          <div class="line"><b>이렇게 말하세요</b>"실물로 보셔야 색이 정확해요.<br><strong>사이트에서 샘플 신청하시면 보내드립니다.</strong> 여기 QR 한번 찍어보실래요?"</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n2">4</div>
+        <div>
+          <h4>대리점 · 협력업체 문의는 담당자 연결</h4>
+          <p>여기서 여러분의 역할은 끝입니다.<br>공급가, 할인율, 대리점 조건은 절대 언급하지 마세요.</p>
+          <div class="line"><b>이렇게 말하세요</b>"대리점이나 협력업체 관련해서는 <strong>담당자가 따로 안내해 드리고 있어요.</strong><br>바로 연결해 드릴게요, 잠시만요!"</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 -->
+  <section>
+    <div class="hd"><div class="n">07</div><div><h2>사전에 한 번 보고 오세요</h2>
+      <p class="sub">근무 전에 훑어보시면 현장에서 훨씬 편합니다.<br>특히 FAQ 페이지는 꼭 한 번 읽고 오세요.</p></div></div>
+    <div class="body">
+      <a class="lk" href="https://stonekim.kr/faq.html" target="_blank" rel="noopener">
+        <div class="qr" data-qr="https://stonekim.kr/faq.html"><span class="fb">QR</span></div>
+        <div>
+          <div class="kind">가장 추천</div>
+          <div class="ttl">스톤킴 공식 FAQ</div>
+          <div class="ds2">이 가이드에 없는 질문은 여기 거의 다 있습니다.<br><strong>현장에서 검색해서 그대로 읽어 드려도 됩니다.</strong></div>
+        </div>
+      </a>
+
+      <a class="lk" href="https://www.youtube.com/@%ED%9C%98%EC%96%B4%EC%A7%80%EB%8A%94%ED%83%80%EC%9D%BC" target="_blank" rel="noopener">
+        <div class="qr" data-qr="https://www.youtube.com/@%ED%9C%98%EC%96%B4%EC%A7%80%EB%8A%94%ED%83%80%EC%9D%BC"><span class="fb">QR</span></div>
+        <div>
+          <div class="kind">영상</div>
+          <div class="ttl">유튜브 · 휘어지는 타일</div>
+          <div class="ds2">실제 시공 영상이 있습니다.<br>어떻게 휘고 어떻게 붙는지 <strong>한 번 보면 설명이 훨씬 쉬워집니다.</strong></div>
+        </div>
+      </a>
+
+      <a class="lk" href="https://stonekim.kr/shopinfo/samplebook.html" target="_blank" rel="noopener">
+        <div class="qr" data-qr="https://stonekim.kr/shopinfo/samplebook.html"><span class="fb">QR</span></div>
+        <div>
+          <div class="kind">손님에게 안내</div>
+          <div class="ttl">샘플 신청 페이지</div>
+          <div class="ds2">개인 고객이 망설이시면 여기로 넘기시면 됩니다.<br>단품, 인기 5종 박스, 20종 묶음이 있습니다.</div>
+        </div>
+      </a>
+
+      <a class="lk" href="https://pf.kakao.com/_fBxfxfn/chat" target="_blank" rel="noopener">
+        <div class="qr" data-qr="https://pf.kakao.com/_fBxfxfn/chat"><span class="fb">QR</span></div>
+        <div>
+          <div class="kind">상담</div>
+          <div class="ttl">카카오톡 채널</div>
+          <div class="ds2">궁금한 거 직접 물어보면 답을 해줍니다.<br><strong>현장에서 사용하기에도 유용해요.</strong></div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    판단이 서지 않으면 답하지 말고 담당자를 부르세요.<br>그게 항상 정답입니다.<br><br>
+    2026 코리아빌드 가이드라인_ 스톤킴<br>
+    대표전화 1866-1338
+  </footer>
+</main>
+
+<script>
+const DATA = [
+  ["제품 · 소재", [
+    ["소프트스톤은 어떻게 만들어지나요?","유연한 유리섬유 베이스 위에 천연 석분(칼슘 분말·석영·모래 등)을 고온·고압으로 성형해 만듭니다. 천연석 질감은 유지하면서 유연성과 가벼움을 동시에 갖췄고, 인체에 무해한 친환경 마감재입니다."],
+    ["무게가 얼마나 되나요?","600×1200은 약 3~5kg, 1200×2400 대형은 약 15kg 정도입니다. 일반 석재보다 압도적으로 가벼워 운반이 수월합니다."],
+    ["원하는 색으로 도장이 되나요?","가능합니다. 실제 현장에서 브랜드 고유 컬러로 도장하는 사례가 많고 완성도도 높습니다. 기초 작업을 병행하면 더 좋습니다."],
+    ["바닥재로 쓸 수 있나요?","쓸 수 없습니다. 벽체·마감용으로 설계된 자재라 보행 하중이나 가구 하중이 계속 실리면 변형될 수 있습니다."],
+    ["습한 곳에 써도 되나요?","기본적인 생활 방수는 됩니다. 호텔·백화점 건식 화장실에는 이미 많이 쓰입니다. 다만 습식 화장실은 권장하지 않으며, 사용하시려면 별도 코팅 처리가 필요합니다."],
+    ["실제 색이 사진과 달라 보여요","모니터 환경에 따라 색감이 달라 보이고, 제작 시점(Lot)에 따라 미세한 색 차이가 있을 수 있습니다. 색이 중요한 프로젝트면 샘플로 실물 확인 후 한 번에 충분한 수량을 확보하시길 권합니다."]
+  ]],
+  ["안전 · 인증", [
+    ["방염이나 불에 강한가요?","준불연 인증을 받은 자재이며 준불연 성적서를 드립니다. 병의원, 가라오케 등에도 시공하고 있습니다. 관할 소방기관에서 준불연 인증서로 안 될 경우 방염필증 발급도 가능합니다."],
+    ["어떤 시험성적서가 있나요?","KCL 시험을 통해 중금속, 천연방사능, 실내공기질(VOC·포름알데히드), 항균성, 내오염성, 촉진내후성 등 다수 항목을 보유하고 있습니다."],
+    ["외벽 마감재로 쓸 수 있나요?","해외에서는 시공하고 있고 외벽 시공 시 10년 수명을 안내합니다. 국내는 수축·팽창이 있는 신소재이고 기후 변수가 많아 충분한 상담과 법적 검토 후 진행을 권합니다. 외벽 마감은 불연·준불연 자재가 원칙이고 층수·높이·면적에 따라 기준이 강화되므로, 시공 전 관할 건축과·건축사·소방서 확인이 필수입니다."]
+  ]],
+  ["시공 · 설치", [
+    ["시공할 때 주의할 점은?","두 가지입니다. ① 부착면 정리와 평탄화 — 유연한 소재라 하지면이 고르지 않으면 굴곡이 그대로 드러납니다. ② 전면 접착 — 뒷면 90% 이상에 접착제를 고르게 도포한 뒤 충분히 압착해야 들뜸과 탈락을 막을 수 있습니다."],
+    ["곡면(라운드) 시공이 되나요?","가능합니다. 허용 R값 범위 내에서 기둥·아치·코너 등 곡면에도 적용됩니다. 모델별 허용 R값이 다르니 사전 문의가 필요합니다."],
+    ["어떻게 자르고 붙이나요?","커터칼, 그라인더, 플런지쏘, 톱다이로 재단할 수 있고 난이도는 어렵지 않습니다. 접착은 경화가 빠른 실리콘을 기본으로 권장하며 현장 조건에 따라 우레탄계 접착제도 씁니다."],
+    ["접착제는 어떻게 바르나요?","뒷면 90% 이상에 균일하게 전면 도포해야 합니다. 부분 도포하면 시간이 지나며 자재가 울거나 끝이 벌어집니다. 붙일 때는 중심부에서 가장자리 방향으로 눌러 공기를 빼며 밀착시킵니다."],
+    ["이음새(줄눈)는 어떻게 마감하나요?","가장 선호되는 방식은 줄눈 없이 바짝 붙이는 맞댐 시공으로, 석재 본연의 일체감을 살릴 수 있습니다. 더 깔끔하게 하려면 컬러 매지나 퍼티 작업으로 이음새를 메워 한 장의 큰 돌처럼 연출합니다. 코너는 전용 코너비드를 쓰면 파손 방지와 완성도를 함께 높입니다."],
+    ["천정에도 시공되나요?","가능하지만 600×1200mm를 넘으면 무게가 급격히 늘어 난이도가 높고 위험합니다. 얇고 가벼운 모델 위주를 권장하며, 양생 전까지 각대 고정과 빈틈없는 전면 접착이 필수입니다. 작업 전 본사 상담을 권합니다."],
+    ["셀프 인테리어가 가능한가요?","600×1200 기준 3~5kg으로 가벼워 기본 공구를 다룰 수 있으면 시공 가능합니다. 정밀한 마감을 원하시면 전문 시공을 권장하며, 처음이시라면 부자재가 포함된 셀프 시공 패키지가 편리합니다."],
+    ["피스나 타카로 고정해도 되나요?","트윙클·스텐리 등은 피스나 타카를 쓰면 자재가 파손되거나 표면이 훼손됩니다. 물리적 타격 시공은 금지하며 실리콘이나 전용 접착제 부착을 권장합니다."]
+  ]],
+  ["주문 · 배송", [
+    ["재단도 해주시나요?","자재 원장(또는 규격 제품) 납품이 원칙이며 별도 재단 작업은 진행하지 않습니다."],
+    ["재고가 있나요? 바로 받을 수 있나요?","당일 발송 가능한 재고를 별도로 운영합니다. 필요한 제품과 수량을 말씀하시면 실시간 확인 후 안내드립니다. 소프트스톤 베스트 상품은 상시 재고로 운영됩니다."],
+    ["결제는 어떻게 하나요?","계산서 발행 후 출고 전 100% 선금이 원칙입니다."],
+    ["배송은 어떻게 오나요?","대형 사이즈 제품이 많아 기본적으로 화물 배송입니다. 제품 종류와 수량에 따라 방식이 달라질 수 있습니다."],
+    ["수량은 어떻게 발주하는 게 좋나요?","실제 시공 면적보다 로스율 5~10% 정도 여유 있게 계산해 발주하시길 권합니다. 재단·파손에 대비할 수 있고, 제작 시점에 따라 미세한 색 차이가 있어 한 번에 확보하는 편이 좋습니다."]
+  ]],
+  ["샘플 · 견적", [
+    ["샘플을 받아볼 수 있나요?","네. 단품 샘플, 인기 5종 샘플박스, 인기 20종 묶음 등 다양한 형태로 제공합니다. 샘플신청 페이지에서 신청하실 수 있습니다."],
+    ["견적은 어떻게 요청하나요?","시공 면적과 원하시는 품목을 알려주시면 견적을 안내해 드립니다. 카카오톡 채널, 전화(1866-1338), 이메일 중 편한 방법으로 문의하시면 됩니다."],
+    ["필요한 수량은 어떻게 계산하나요?","홈페이지의 자재 수량 계산기에 가로·세로 치수를 입력하면 자동 산출됩니다. 정확한 산정이 필요하면 도면이나 치수를 보내주시면 됩니다."]
+  ]],
+  ["교환 · 반품 · AS", [
+    ["시공하다 파손됐어요","파손 조각이 있으면 순간접착제로 원위치에 부착 후 압착 고정하는 즉시 보수가 가능합니다. 복원이 어려우면 1장 구매나 샘플(200×300mm)로 부분 보수를 진행합니다."],
+    ["붙인 자재를 떼어 재사용할 수 있나요?","전면 밀착 시공이라 탈거 과정에서 손상 위험이 매우 높습니다. 뒷면 유리섬유나 전면 석분 층이 변형될 수 있어 철거 후 재사용은 어렵습니다."],
+    ["교환·반품이 되나요?","제품 하자나 오배송은 책임지고 처리합니다. 다만 단순 변심이나 시공·재단 후 제품은 어려울 수 있습니다. 자세한 기준은 1866-1338로 확인하시면 됩니다."]
+  ]],
+  ["쇼룸 · 상담", [
+    ["쇼룸을 방문할 수 있나요?","경기 김포 본사 쇼룸을 운영합니다. 평일·주말·공휴일 09:00~18:00이며 운영시간 내에는 예약 없이 방문하셔도 됩니다. 월~토는 상담 가능, 일요일은 오픈 쇼룸으로 구경만 가능합니다. 네이버 예약을 이용하면 우선 상담을 받으실 수 있고 주차는 무료입니다. (경기도 김포시 양촌읍 대곶남로 307 2층)"],
+    ["상담은 어떻게 받나요?","카카오톡 채널, 전화(1866-1338), 이메일(stone.kim001@gmail.com)로 문의하실 수 있습니다."]
+  ]],
+  ["대리점 · 취급점", [
+    ["대리점이나 취급점을 모집하나요?","네, 파트너를 모집하고 있습니다. 현재 본사(김포)를 중심으로 부산 기장·제주 대리점, 전북 익산·충남 홍성 취급점이 운영 중이며 거점이 없는 지역의 파트너를 환영합니다. 자세한 안내는 담당자가 따로 드립니다."],
+    ["대리점과 취급점은 어떻게 다른가요?","대리점은 지역 거점으로 폭넓은 품목과 상담을 담당하고, 취급점은 일부 품목 중심으로 운영됩니다. 사업 규모와 지역에 맞는 형태를 담당자가 상담해 드립니다."],
+    ["조건이나 혜택을 물어보시면","조건과 혜택은 담당자만 안내합니다. 직접 답하지 마시고 반드시 담당자를 연결해 주세요."],
+    ["대리점·취급점 문의가 들어오면 어떻게 하나요?","바로 직원을 연결해 주세요. '대리점이나 협력업체 관련해서는 담당자가 따로 안내해 드리고 있어요. 연결해 드릴게요'라고 안내하시면 됩니다. 지역, 조건, 공급가는 절대 언급하지 마세요."],
+    ["협력업체(시공)로 등록하고 싶다고 하면","이 역시 담당자 연결입니다. 스톤킴은 시공 협력업체를 연계해 자재부터 시공까지 안내하고 있습니다."]
+  ]]
+];
+
+const faqEl = document.getElementById('faq');
+const noneEl = document.getElementById('none');
+
+DATA.forEach(([group, items]) => {
+  const g = document.createElement('details');
+  g.className = 'grp';
+  g.innerHTML = `<summary>${group}<span class="cnt">${items.length}</span></summary>` +
+    `<div class="glist">` + items.map(([q,a]) =>
+      `<details class="qitem" data-k="${(group+' '+q+' '+a).replace(/"/g,'')}"><summary>${q}</summary><div class="ans">${a}</div></details>`
+    ).join('') + `</div>`;
+  faqEl.appendChild(g);
+});
+
+document.getElementById('q').addEventListener('input', e => {
+  const v = e.target.value.trim().toLowerCase();
+  let hits = 0;
+  document.querySelectorAll('.qitem').forEach(d => {
+    const match = !v || d.dataset.k.toLowerCase().includes(v);
+    d.hidden = !match;
+    if (match) hits++;
+    d.open = !!(v && match);
+  });
+  document.querySelectorAll('.grp').forEach(g => {
+    const any = [...g.querySelectorAll('.qitem')].some(d => !d.hidden);
+    g.hidden = !any;
+    g.open = v ? any : false;
+  });
+  noneEl.hidden = hits > 0;
+});
+
+(function(){
+  const s = document.createElement('script');
+  s.src = 'https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js';
+  s.onload = function(){
+    document.querySelectorAll('.qr[data-qr]').forEach(el => {
+      try{ const qr = qrcode(0,'M'); qr.addData(el.dataset.qr); qr.make();
+        el.innerHTML = qr.createImgTag(4,4);
+      }catch(e){ el.innerHTML = '<span class="fb">눌러서<br>열기</span>'; }
+    });
+  };
+  s.onerror = function(){
+    document.querySelectorAll('.qr[data-qr]').forEach(el => {
+      el.innerHTML = '<span class="fb">눌러서<br>열기</span>';
+    });
+  };
+  document.body.appendChild(s);
+})();
+</script>
